@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Carousel</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        .carousel  {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+        }
+        .carousel-item {
+            overflow: hidden;
+            display: none;
+        }
+        .carousel-item.active {
+            display: block;
+        }
+        .carousel-left-control, .carousel-right-control {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 150px;
+            color: #fff;
+            text-align: center;
+            opacity: .5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .carousel-left-control {
+            left: 0;
+            background: linear-gradient(to right, rgba(0,0,0,1) 0%,rgba(8,22,38,1) 25%,rgba(30,87,153,0) 100%); 
+        }
+        .carousel-left-control:hover, .carousel-right-control:hover {
+            opacity: .55;
+        }
+        .carousel-right-control{
+            right: 0;
+            background: linear-gradient(to right, rgba(30,87,153,0) 0%,rgba(8,22,38,1) 75%,rgba(0,0,0,1) 100%);
+        }
+        .carousel-next, .carousel-previous {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background: transparent no-repeat center center;
+            background-size: 100% 100%;
+        }
+        .carousel-previous {
+            background-image: url(images/left.svg);
+        }
+        .carousel-next {
+            background-image: url(images/right.svg);
+        }
+        .item-01 {
+            background: url(images/img-1.jpg) no-repeat center center;
+            background-size: cover;
+            height: 400px;
+        }
+        .item-02 {
+            background: url(images/img-2.jpg) no-repeat center center;
+            background-size: cover;
+            height: 400px;
+        }
+        .item-03 {
+            background: url(images/img-3.jpg) no-repeat center center;
+            background-size: cover;
+            height: 400px;
+        }
+    </style> 
+</head>
+<body>
+    <div class="content-wrapper">
+        <div id="Carousel" class="carousel">
+            <div class="carousel-content">
+                <div class="carousel-item item-01 active"></div>
+                <div class="carousel-item item-02"></div>
+                <div class="carousel-item item-03"></div>
+            </div>
+            <a id="Previous" class="carousel-left-control" href="#" role="button">
+                <span class="carousel-previous"></span>
+            </a>
+            <a id="Next" class="carousel-right-control" href="#" role="button">
+                <span class="carousel-next"></span>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    var carouselCounts = document.getElementById('Carousel').getElementsByClassName('carousel-item');
+    console.log(carouselCounts);
+
+    document.getElementById("Next").addEventListener("click", carouselNext);
+    
+    function carouselNext() {
+        carouselCounts.contains.classList('item-1');
+        console.log(carouselCounts);
+    }
+
+    // for( i = 0; i < carouselCounts.length; i++ )
+    // {
+    //     var carouselCount = carouselCounts[i];
+    //     console.log(carouselCount);
+    // };
+</script>
